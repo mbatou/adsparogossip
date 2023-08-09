@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <title>Adsparo Gossip</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo" style="height: 37;">
+            <img class="adsparo" src="images/logo.png" alt="logo">
+        </div>
+        <!-- <nav>
+            <ul>
+                <li>Home</li>
+                <li>Explore</li>
+                <li>Notifications</li>
+            </ul>
+        </nav> -->
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="hashtags p-3">
+                    <h4>Trends</h4>
+                    <ul class="list-unstyled">
+                        <li>#Technology</li>
+                        <li>#MEST</li>
+                        <li>#Gossip</li>
+                        <li>#GhanaInnovates</li>
+                        <li>#TechTalk</li>
+                        <!-- More hashtags would go here -->
+                    </ul>
+                </div>
+                <div class="banner-card">
+                    <div class="front">
+                        <img src="images/banner600.jpg" alt="banner600">
+                        <img class="gif" src="images/FMWA+Footer.gif" alt="gif">
+                        <button class="btn button" onclick="flipCard()">Play</button>
+                        <h1 class="heading-game">Let's get you</h1>
+                        <h1 class="subtitle-game">some ice cream !</h1>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-times flip-icon" onclick="flipCard()"></i>
+                        <span class="countdown-timer" id="timer">1:00</span>
+                        <div class="image-row">
+                            <img class="pot" src="images/chocolate-almond-pdt.png" alt="pot-chocolate">
+                            <img class="pot" src="images/cream-cookie-pdt.png" alt="pot-almond">
+                            <img class="pot" src="images/salted-caramel-pdt.png" alt="pot-caramel">
+                            <img class="scoop" src="images/salted-caramel.png" alt="scoop-caramel">
+                            <img class="scoop1" src="images/cookie-cream.png" alt="scoop-chocolate">
+                            <img class="scoop2" src="images/chocolate-almond.png" alt="scoop-almond">
+                        </div>
+                        <div class="bowl-container">
+                            <img class="bowl" id="bowl" src="images/Bowl.png" alt="bowl" draggable="true">
+                            <img class="greenbowl" id="bowl" src="images/bowlgreen.jpg" alt="greenbowl"
+                                draggable="true">
+                        </div>
+                    </div>
+                    <div class="third-card" style="display: none;">
+                        <img src="images/end-banner.jpg" alt="end-banner">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <main class="content p-4">
+                    <!-- List of tweets -->
+                    <div class="tweet card mb-3">
+                        <div class="user d-flex align-items-center p-2">
+                            <img src="images/avatar.jpeg" alt="User Avatar" class="avatar mr-2">
+                            <div class="username">@GossipQueen234</div>
+                        </div>
+                        <div class="content card-body">
+                            <p>Just heard that Ghana is becoming a tech hotspot! 🇬🇭💻 Can't wait to see how @Adsparo
+                                spices things up with their interactive ads! 🔥 #TechTalk </p>
+                        </div>
+                    </div>
+                    <div class="news card mb-3">
+                        <div class="title card-header">
+                            Breaking News
+                        </div>
+                        <div class="content card-body">
+                            <h5 class="card-title">Tech Marvel Adsparo Unveils Groundbreaking Interactive Ads,
+                                Revolutionizing Advertising Landscape.</h5>
+                            <p class="card-text">Adsparo, a leading tech innovator, has launched a game-changing line of
+                                interactive ads that promises to reshape the advertising industry. With engaging
+                                features and seamless user experience, these ads are set to redefine how brands connect
+                                with consumers.</p>
+                        </div>
+                    </div>
+                    <div class="tweet card mb-3">
+                        <div class="user d-flex align-items-center p-2">
+                            <img src="images/avatar5.avif" alt="User Avatar" class="avatar mr-2">
+                            <div class="username">@AfroTechExplorer</div>
+                        </div>
+                        <div class="content card-body">
+                            <p>Exploring the synergy of tech and culture in Ghana, and guess who's adding the spice? 🌶️
+                                @Adsparo's interactive ads are making innovation sizzle! 🔥📲 #TechCultureBlend</p>
+                        </div>
+                    </div>
+                    <div class="cube" id="cube">
+                        <div class="cube__face cube__face--front">
+                            <img src="images/cube1MEST.png" alt="Image 1">
+                        </div>
+                        <div class="cube__face cube__face--right">
+                            <img src="images/cube2MEST.png" alt="Image 2">
+                        </div>
+                        <div class="cube__face cube__face--left">
+                            <img src="images/cube3MEST.png" alt="Image 2">
+                        </div>
+                        <div class="cube__face cube__face--back">
+                            <img src="images/cube4MEST.png" alt="Image 3">
+                        </div>
+                    </div>
+                    <div class="news card mb-3">
+                        <div class="title card-header">
+                            JUST IN
+                        </div>
+                        <div class="content card-body">
+                            <h5 class="card-title">Ghanaian Government Partners with Leading Tech Firms to Launch
+                                Nationwide Digital Literacy Program.</h5>
+                            <p class="card-text">In a bid to promote digital inclusion, the Ghanaian government has
+                                joined forces with prominent tech companies to introduce a nationwide digital literacy
+                                initiative. The program aims to equip citizens with essential digital skills for the
+                                modern world.</p>
+                        </div>
+                    </div>
+                    <div class="tweet card mb-3">
+                        <div class="user d-flex align-items-center p-2">
+                            <img src="images/avatar3.png" alt="User Avatar" class="avatar mr-2">
+                            <div class="username">@GossipGeekette</div>
+                        </div>
+                        <div class="content card-body">
+                            <p>Secrets out! 💬 @Adsparo is about to drop a bomb of interactivity on Ghana's ad game.
+                                Buckle up, tech enthusiasts! 🚀💥 #GhanaAdGossip #TechThrills</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img class="carousel-image" src="images/carousel1.png" alt="Image 1">
+                                <img class="carousel-image" src="images/carousel2.png" alt="Image 2">
+                                <img class="carousel-image" src="images/carousel3.png" alt="Image 3">
+                                <img class="carousel-image" src="images/carousel4.png" alt="Image 4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet card mb-3">
+                        <div class="user d-flex align-items-center p-2">
+                            <img src="images/avatar3.png" alt="User Avatar" class="avatar mr-2">
+                            <div class="username">@InnovateGhanaNow</div>
+                        </div>
+                        <div class="content card-body">
+                            <p> Innovation alert! 🚨 @Adsparo's cutting-edge interactive ads are set to rock Ghana's
+                                tech ecosystem. Who's excited for this game-changer? 🙌🎮 #GhanaInnovates</p>
+                        </div>
+                    </div>
+                    <div class="tweet card mb-3">
+                        <div class="user d-flex align-items-center p-2">
+                            <img src="images/avatar5.avif" alt="User Avatar" class="avatar mr-2">
+                            <div class="username">@AdMaverickX</div>
+                        </div>
+                        <div class="content card-body">
+                            <p>Hold onto your screens, folks! 📺💥 Just got wind that @Adsparo is adding a touch of
+                                magic to ads in Ghana. Let's ride the wave of innovation! 🌊🚀 #AdMagicGhana</p>
+                        </div>
+                    </div>
+                    <!-- List of news articles -->
+                    <div class="news card mb-3">
+                        <div class="title card-header">
+                            LATEST
+                        </div>
+                        <div class="content card-body">
+                            <h5 class="card-title">Ghana's First Quantum Computing Lab Inaugurated, Promising
+                                Breakthroughs in Scientific Research.</h5>
+                            <p class="card-text">Ghana has taken a significant stride in scientific advancement with the
+                                inauguration of its inaugural quantum computing lab. The lab's cutting-edge technology
+                                is poised to revolutionize research across various disciplines.</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="col-md-3">
+                <div class="ads p-3">
+                    <img src="images/henybanner.png" alt="Ad" class="img-fluid" onclick="showcardo()">
+                </div>
+                <div class="hashtags p-3">
+                    <h4>Sport</h4>
+                    <ul class="list-unstyled">
+                        <li>SN vs GH</li>
+                        <li>NG vs AG</li>
+                        <li>ML vs NIG</li>
+                        <li>MC vs AL</li>
+                        <li>SA vs GH</li>
+                        <!-- More hashtags would go here -->
+                    </ul>
+                </div>
+                <div class="banner" onclick="showCardColoris()">
+                    <button class="banner-button btn btn-primary">Essayer Coloris</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="cardContainer" class="card-container">
+            <button class="close-button" onclick="closeCardColoris()">&times;</button>
+            <div class="logoColoris"></div>
+            <h1 class="headline">Choisissez le revêtement que vous souhaitez</h1>
+            <div class="slider">
+                <img class="slider-img active" src="images/GELATEX-22kg.png" alt="Slider Image 1" onclick="spotImage(this)">
+                <img class="slider-img" src="images/GELATEX-23kg.png" alt="Slider Image 2" onclick="spotImage(this)">
+                <img class="slider-img" src="images/GELATEX-PRO-25kg.png" alt="Slider Image 3" onclick="spotImage(this)">
+                <img class="slider-img" src="images/ACRYLSATIN-20KG.png" alt="Slider Image 4" onclick="spotImage(this)">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+
+</html>
